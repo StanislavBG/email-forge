@@ -1,0 +1,36 @@
+{
+  "name": "@bilkobibitkov/host-kit",
+  "version": "0.1.0",
+  "description": "Shared React component kit for bilko.run sibling apps — ToolHero, ScoreCard, SectionBreakdown, CompareLayout, Rewrites, CrossPromo, and analytics track().",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": ["dist", "README.md", "LICENSE"],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run build"
+  },
+  "peerDependencies": {
+    "react": "^18.0.0",
+    "@clerk/clerk-react": "^5.0.0"
+  },
+  "devDependencies": {
+    "tsup": "^8.0.0",
+    "typescript": "^5.6.0",
+    "@types/react": "^18.3.0"
+  },
+  "publishConfig": { "access": "public" },
+  "repository": { "type": "git", "url": "https://github.com/StanislavBG/bilko-host-kit.git" },
+  "license": "MIT",
+  "author": "Stanislav Bibitkov"
+}

@@ -1,7 +1,27 @@
 import { useState, useEffect, useRef } from 'react';
 import { SignInButton } from '@clerk/clerk-react';
 import { useToolApi } from './useToolApi.js';
-import { ToolHero, CrossPromo, track } from './kit.js';
+import { ToolHero, CrossPromo, track } from '@bilkobibitkov/host-kit';
+
+const EMAIL_FORGE_THEME = {
+  heroGradient: 'from-[#1f1a0d] via-[#15100a] to-[#1f1a0d]',
+  glowColor: 'rgba(245,158,11,0.14)',
+  accentText: 'text-amber-400',
+  accentTextLight: 'text-amber-500',
+};
+
+const CROSS_PROMO_ITEMS = [
+  {
+    name: 'AdScorer',
+    href: 'https://bilko.run/products/ad-scorer',
+    hook: 'Emails done. Now score the ad that fills the top of funnel.',
+  },
+  {
+    name: 'AudienceDecoder',
+    href: 'https://bilko.run/products/audience-decoder',
+    hook: "Know who you're emailing. Decode your audience first.",
+  },
+];
 
 interface EmailItem {
   position: number;
@@ -567,6 +587,7 @@ export function EmailForgePage() {
       </SignInButton>
 
       <ToolHero
+        theme={EMAIL_FORGE_THEME}
         title="Forge your email sequence"
         tagline="AI generates a 5-email sequence using proven persuasion frameworks"
       >
@@ -716,7 +737,7 @@ export function EmailForgePage() {
         </div>
       )}
 
-      {result && <CrossPromo />}
+      {result && <CrossPromo items={CROSS_PROMO_ITEMS} />}
 
       {compareResult && (
         <div ref={resultRef} className="max-w-4xl mx-auto px-6 pt-10 space-y-6 pb-16">
