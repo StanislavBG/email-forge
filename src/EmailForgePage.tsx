@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { SignInButton } from '@clerk/clerk-react';
 import { useToolApi } from './useToolApi.js';
-import { ToolHero, CrossPromo, track } from '@bilkobibitkov/host-kit';
+import { ToolHero, CrossPromo, track } from 'host-kit';
 
 const EMAIL_FORGE_THEME = {
   heroGradient: 'from-[#1f1a0d] via-[#15100a] to-[#1f1a0d]',
